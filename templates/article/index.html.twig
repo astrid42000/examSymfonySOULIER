@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    {% if app.user is not null %}
+        <button class="ajout"><a class="add" href="{{ path('ajout') }}">Ajouter un article</a></button>
+    {% endif %}
+
+    <div class="text-center d-flex justify-content-center mt-5 mb-5">
+    <h1 >Nos Articles</h1>
+    </div>
+    {% for article in result %}
+<div class="example-wrapper">
+        <div class="d-flex justify-content-around">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 25rem;">
+                <img src="{{ asset('upload/article/' ~ article.photo) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.titre }}</h5>
+                    <p class="card-text">{{ article.description }}</p>
+                    <a href="{{ path('detail',{'oneArticle': article.id}) }}" class="btn btn-primary">Voir Plus</a>
+                    {% if app.user is not null %}
+                    <a class="deco" href="{{ path('article_delete',{'id':article.id}) }}">Supprimer</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+
+    <div class="d-flex justify-content-center">
+
+        {% for i in 1..nbrPages%}
+            <a class="page" href="{{ path('page', {'page': i}) }}">{{ i }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

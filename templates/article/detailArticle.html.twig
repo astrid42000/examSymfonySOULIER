@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+<div class="my-auto mt-5 mb-4">
+    <h1 class="text-center">{{ oneArticle.titre }}</h1>
+
+    <img class="d-flex justify-content-center mt-3 mb-3" src="{{ asset('upload/article/' ~ oneArticle.photo) }}">
+
+    <h2 class="text-center">{{ oneArticle.description }}</h2>
+
+    <p class="text-center">{{ oneArticle.contenu }}</p>
+
+</div>
+
+{#    <a href="{{path ('update',{'article':oneArticle.id}) }}">Mise a jour</a>#}
+
+{% endblock %}

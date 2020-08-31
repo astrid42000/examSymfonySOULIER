@@ -1,0 +1,8 @@
+.deco:hover{
+    text-decoration: none;
+    color:darkred;
+}
+
+.deco{
+    color:red;
+}

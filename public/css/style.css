@@ -1,0 +1,32 @@
+.deco:hover{
+    text-decoration: none;
+    color:darkred;
+}
+
+.deco{
+    color:red;
+}
+
+.ajout{
+    border:2px solid steelblue;
+    border-radius: 2px;
+    background-color:#0056b3;
+}
+
+.add{
+    color:white;
+}
+
+.add:hover{
+    text-decoration: none;
+    color:white;
+
+}
+
+.page{
+    color:black;
+}
+
+.color{
+    background-color: #80bdff;
+}
